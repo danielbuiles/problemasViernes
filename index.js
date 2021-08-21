@@ -11,7 +11,18 @@ const temperaturaEndor = (max,min) =>{
   return (max+min)/2;
 }
 
-//escribe los resultados  por consola
+function monitoreoSables(arr){
+  let energiaOscura=0;
+  for(let i=0;i<arr.length;i++){
+    if(arr[i]<0){
+      energiaOscura++;
+    }
+  }
+  return energiaOscura;
+}
+
+//escribe los resultados  por consola haga sus propios testeos
 console.log("Problema N1= ",distanciaPlanetaria(50,70));
 console.log("Problema N2= ",...descifradorPiloto("ARQ20055: Noddin Chavrin"));
-console.log(temperaturaEndor(27,10));
+console.log("Problema N3= ",temperaturaEndor(27,10));
+console.log("Problema N4= ",monitoreoSables([2,4-8,5,-6]));
