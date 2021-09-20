@@ -1,14 +1,15 @@
-//funciones con los 5 problemas
+//funciones tradicionales con los 5 problemas
 function distanciaPlanetaria(x1,y1,x2=0,y2=0) {
-    return  Math.sqrt(Math.pow(x1-x2,2)+Math.pow(y1-y2,2));
+    return  (`Distancia entre los planetas= ${Math.sqrt(Math.pow(x1-x2,2)+Math.pow(y1-y2,2))}`);
 }
 
 function descifradorPiloto(codNave){
-  return  codNave.split(":").slice(1);
+  return  (`Nombre del piloto de la Nave= ${codNave.split(":").slice(1)}`);
 }
 
-const calcularTemperaturaPromedio = Temperatura =>{
-  return (Math.min(...Temperatura)+Math.max(...Temperatura))/2;
+function calcularTemperaturaPromedio (Temperatura){
+  let temperatura = (Math.min(...Temperatura)+Math.max(...Temperatura))/2;
+  return `Temperatura promediode endor= ${temperatura}C`;
 }
 
 function numeroSablesOscuros(sables){
@@ -18,14 +19,19 @@ function numeroSablesOscuros(sables){
       energiaOscura++;
     }
   }
-  return energiaOscura;
+  return (`cantidad de sables con energia negativa= ${energiaOscura}`);
 }
 
-const saludoFlecha = saludo => `hello madafa.. ${saludo}`
+function wattoSalarioVendedor(nombre,nroLicenciasVendidas=0){
+
+  let vendedorSalario = 3500000+((1500000*nroLicenciasVendidas)-(75000*nroLicenciasVendidas));
+
+  console.log(`${nombre} se gana un salario mensual de $${vendedorSalario} millones de pesos`)
+}
 
 //escribe los resultados  por consola haga sus propios testeos
-console.log(`Distancia entre los planetas= ${distanciaPlanetaria(50,70)}`);
-console.log(`Nombre del piloto de la Nave=${descifradorPiloto("ARQ20055: Noddin Chavrin")}`);
-console.log(`Temperatura promediode endor= ${calcularTemperaturaPromedio([10,50,60,20,5])}C`);
-console.log(`cantidad de sables con energia negativa= ${numeroSablesOscuros([2,4-8,5,-6])}`);
-console.log(saludoFlecha("Kamill"))
+console.log(distanciaPlanetaria(50,70));
+console.log(descifradorPiloto("ARQ20055: Noddin Chavrin"));
+console.log(calcularTemperaturaPromedio([10,50,60,20,5]));
+console.log(numeroSablesOscuros([2,4-8,5,-6]));
+console.log(wattoSalarioVendedor("Martin",1));
